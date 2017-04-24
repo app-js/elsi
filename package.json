@@ -1,0 +1,12 @@
+{
+  "name": "elsi",
+  "version": "1.0.0",
+  "description": "electron tests",
+  "main": "main.js",
+  "scripts": {
+    "test": "error: no tests",
+    "start": "electron ."
+  },
+  "author": "js",
+  "license": "MIT"
+}
