@@ -44,6 +44,10 @@ onload = function() {
   webview.addEventListener('did-get-redirect-request', handleLoadRedirect);
   webview.addEventListener('did-finish-load', handleLoadCommit);
 
+  webview.addEventListener("dom-ready", function(){
+    webview.openDevTools();
+  });
+  
   // Test for the presence of the experimental <webview> zoom and find APIs.
   if (typeof(webview.setZoom) == "function" &&
       typeof(webview.find) == "function") {
