@@ -1,7 +1,7 @@
 {
   "name": "elsi",
   "version": "1.0.0",
-  "description": "electron tests",
+  "description": "electron simple",
   "main": "main.js",
   "scripts": {
     "test": "error: no tests",
@@ -9,7 +9,11 @@
   },
   "author": "js",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/app-js/elsi.git"
+  },
   "devDependencies": {
-    "electron": "1.5.1"
+    "electron": "~1.6.1"
   }
 }
