@@ -4,8 +4,15 @@ const app = electron.app
 // Module to create native browser window.
 const BrowserWindow = electron.BrowserWindow
 
+// var ipc = electron.ipcRenderer;
+// var webFrame = electron.webFrame;
+
 const path = require('path')
 const url = require('url')
+
+// var _browser_zoomLevel = 0;
+// var _browser_maxZoom = 9;
+// var _browser_minZoom = -8;
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
@@ -55,3 +62,22 @@ app.on('activate', function () {
     createWindow()
   }
 })
+
+// ipc.on("zoomIn", function () {
+//     if (_browser_maxZoom > _browser_zoomLevel) {
+//         _browser_zoomLevel += 1;
+//     }
+//     webFrame.setZoomLevel(_browser_zoomLevel);
+// });
+
+// ipc.on("zoomOut", function () {
+//     if (_browser_minZoom < _browser_zoomLevel) {
+//         _browser_zoomLevel -= 1;
+//     }
+//     webFrame.setZoomLevel(_browser_zoomLevel);
+// });
+
+// ipc.on("zoomReset", function () {
+//     _browser_zoomLevel = 0;
+//     webFrame.setZoomLevel(_browser_zoomLevel);
+// });

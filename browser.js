@@ -49,6 +49,8 @@ onload = function() {
   // });
   
   // Test for the presence of the experimental <webview> zoom and find APIs.
+  // if (typeof(webview.setZoomFactor) == "function" &&
+  //     typeof(webview.findInPage) == "function") {
   if (typeof(webview.setZoom) == "function" &&
       typeof(webview.find) == "function") {
     var findMatchCase = false;
