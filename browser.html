@@ -2,10 +2,35 @@
 <html>
   <head>
     <link rel="stylesheet" href="browser.css">
-    <script src="browser.js"></script>
-  <body>
-    <div id="controls">
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/font-awesome.css">
+    <!--<link rel="stylesheet" href="./css/browser.css">-->
+    <link rel="stylesheet" href="./css/browser-tabs.css">
+    <link rel="stylesheet" href="./css/browser-navbar.css">
+    <link rel="stylesheet" href="./css/browser-page.css">
 
+    <script src="browser.js"></script>
+  </head>
+  <body>
+    <div id="browser-tabs">
+      <a class="close"><i class="fa fa-circle"></i></a>
+      <a class="minimize"><i class="fa fa-circle"></i></a>
+      <a class="maximize"><i class="fa fa-circle"></i></a>
+      <a class="newtab"><i class="fa fa-plus"></i></a>
+    </div>  
+    <div id="browser-navbar">
+      <a href="#" title="Rewind"><i class="fa fa-angle-double-left fa-lg"></i></a>
+      <a href="#" title="Back"><i class="fa fa-angle-left fa-lg"></i></a>
+      <a href="#" title="Forward"><i class="fa fa-angle-right fa-lg"></i></a>
+      <a href="#" title="Refresh"><i class="fa fa-circle-thin fa-lg"></i></a>
+
+      <div class="input-group">
+        <input type="text">
+      </div>
+    </div>
+
+    <div id="controls">
       <button id="back" title="Go Back" disabled="true">&#9664;</button>
       <button id="forward" title="Go Forward" disabled="true">&#9654;</button>
       <button id="home" title="Go Home">&#8962;</button>
