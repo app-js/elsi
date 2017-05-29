@@ -156,11 +156,15 @@ function navigateTo(url) {
 function doLayout() {
   var webview = document.querySelector('webview');
   var controls = document.querySelector('#controls');
+  var tabs = document.querySelector('#browser-tabs');
+  var nav = document.querySelector('#browser-navbar');
   var controlsHeight = controls.offsetHeight;
+  var tabsHeight = tabs.offsetHeight;
+  var navHeight = nav.offsetHeight;
   var windowWidth = document.documentElement.clientWidth;
   var windowHeight = document.documentElement.clientHeight;
   var webviewWidth = windowWidth;
-  var webviewHeight = windowHeight - controlsHeight;
+  var webviewHeight = (windowHeight - controlsHeight - tabsHeight - navHeight)/2;
 
   webview.style.width = webviewWidth + 'px';
   webview.style.height = webviewHeight + 'px';
