@@ -170,10 +170,10 @@ function doLayout() {
   webview.style.height = webviewHeight + 'px';
 
   var webview1 = document.querySelector('#wv1');
-  var webviewHeight1 = webviewHeight;
+  var webviewHeight1 = (windowHeight - controlsHeight - tabsHeight - navHeight)/2;
   webview1.style.width = webviewWidth + 'px';
   webview1.style.height = webviewHeight1 + 'px';
-  webview1.bottom = webviewHeight;
+  webview1.style.bottom = webviewHeight1 + 'px';
 
   var sadWebview = document.querySelector('#sad-webview');
   sadWebview.style.width = webviewWidth + 'px';
