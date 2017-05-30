@@ -2,7 +2,7 @@ window.onresize = doLayout;
 var isLoading = false;
 
 onload = function() {
-  var webview = document.querySelector('webview');
+  var webview = document.querySelector('#wv2');
   doLayout();
 
   document.querySelector('#back').onclick = function() {
@@ -89,7 +89,7 @@ onload = function() {
 
     document.querySelector('#find').onclick = function() {
       if(document.querySelector('#find-box').style.display == 'block') {
-        document.querySelector('webview').stopFinding();
+        document.querySelector('#wv2').stopFinding();
         closeFindBox();
       } else {
         openFindBox();
@@ -150,11 +150,11 @@ onload = function() {
 
 function navigateTo(url) {
   resetExitedState();
-  document.querySelector('webview').src = url;
+  document.querySelector('#wv2').src = url;
 }
 
 function doLayout() {
-  var webview = document.querySelector('webview');
+  var webview = document.querySelector('#wv2');
   var controls = document.querySelector('#controls');
   var tabs = document.querySelector('#browser-tabs');
   var nav = document.querySelector('#browser-navbar');
@@ -168,6 +168,12 @@ function doLayout() {
 
   webview.style.width = webviewWidth + 'px';
   webview.style.height = webviewHeight + 'px';
+
+  var webview1 = document.querySelector('#wv1');
+  var webviewHeight1 = webviewHeight;
+  webview1.style.width = webviewWidth + 'px';
+  webview1.style.height = webviewHeight1 + 'px';
+  webview1.bottom = webviewHeight;
 
   var sadWebview = document.querySelector('#sad-webview');
   sadWebview.style.width = webviewWidth + 'px';
@@ -253,7 +259,7 @@ function handleKeyDown(event) {
 
 function handleLoadCommit() {
   resetExitedState();
-  var webview = document.querySelector('webview');
+  var webview = document.querySelector('#wv2');
   document.querySelector('#location').value = webview.getURL();
   document.querySelector('#back').disabled = !webview.canGoBack();
   document.querySelector('#forward').disabled = !webview.canGoForward();
@@ -310,7 +316,7 @@ function getNextPresetZoom(zoomFactor) {
 }
 
 function increaseZoom() {
-  var webview = document.querySelector('webview');
+  var webview = document.querySelector('#wv2');
   webview.getZoom(function(zoomFactor) {
     var nextHigherZoom = getNextPresetZoom(zoomFactor).high;
     webview.setZoom(nextHigherZoom);
@@ -319,7 +325,7 @@ function increaseZoom() {
 }
 
 function decreaseZoom() {
-  var webview = document.querySelector('webview');
+  var webview = document.querySelector('#wv2');
   webview.getZoom(function(zoomFactor) {
     var nextLowerZoom = getNextPresetZoom(zoomFactor).low;
     webview.setZoom(nextLowerZoom);
@@ -328,7 +334,7 @@ function decreaseZoom() {
 }
 
 function openZoomBox() {
-  document.querySelector('webview').getZoom(function(zoomFactor) {
+  document.querySelector('#wv2').getZoom(function(zoomFactor) {
     var zoomText = document.forms['zoom-form']['zoom-text'];
     zoomText.value = Number(zoomFactor.toFixed(6)).toString();
     document.querySelector('#zoom-box').style.display = '-webkit-flex';

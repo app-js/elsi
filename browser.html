@@ -13,70 +13,76 @@
     <script src="browser.js"></script>
   </head>
   <body>
-    <div id="browser-tabs">
-      <a class="close"><i class="fa fa-circle"></i></a>
-      <a class="minimize"><i class="fa fa-circle"></i></a>
-      <a class="maximize"><i class="fa fa-circle"></i></a>
-      <a class="newtab"><i class="fa fa-plus"></i></a>
-    </div>  
-    <div id="browser-navbar">
-      <a href="#" title="Rewind"><i class="fa fa-angle-double-left fa-lg"></i></a>
-      <a href="#" title="Back"><i class="fa fa-angle-left fa-lg"></i></a>
-      <a href="#" title="Forward"><i class="fa fa-angle-right fa-lg"></i></a>
-      <a href="#" title="Refresh"><i class="fa fa-circle-o-notch fa-lg"></i></a>
+    <div id="browser1">
+      <div id="browser-tabs">
+        <a class="close"><i class="fa fa-circle"></i></a>
+        <a class="minimize"><i class="fa fa-circle"></i></a>
+        <a class="maximize"><i class="fa fa-circle"></i></a>
+        <a class="newtab"><i class="fa fa-plus"></i></a>
+      </div>  
+      <div id="browser-navbar">
+        <a href="#" title="Rewind"><i class="fa fa-angle-double-left fa-lg"></i></a>
+        <a href="#" title="Back"><i class="fa fa-angle-left fa-lg"></i></a>
+        <a href="#" title="Forward"><i class="fa fa-angle-right fa-lg"></i></a>
+        <a href="#" title="Refresh"><i class="fa fa-circle-o-notch fa-lg"></i></a>
 
-      <div class="input-group">
-        <input type="text">
-      </div>
-    </div>
-
-    <div id="controls">
-      <button id="back" title="Go Back" disabled="true">&#9664;</button>
-      <button id="forward" title="Go Forward" disabled="true">&#9654;</button>
-      <button id="home" title="Go Home">&#8962;</button>
-      <button id="reload" title="Reload">&#10227;</button>
-
-      <form id="location-form">
-        <div id="center-column">
-          <input id="location" type="text" value="https://www.js01.de/">
+        <div class="input-group">
+          <input type="text">
         </div>
-        <input type="submit" value="Go">
-      </form>
+      </div>
 
-      <button id="zoom" title="Change Zoom">&#128270;</button>
-      <button id="find" title="Find in Page">&#128294;</button>
-
+      <webview id="wv1" src="https://www.google.de/" style="width:640px; height:240px"></webview>
     </div>
 
-    <div id="zoom-box">
-      <form id="zoom-form">
-        <input id="zoom-text" type="text">
-        <input type="submit" value="&#128270;">
-        <button id="zoom-in">&#10133;</button>
-        <button id="zoom-out">&#10134;</button>
-      </form>
-    </div>
+    <div id="browser2">
+      <div id="controls">
+        <button id="back" title="Go Back" disabled="true">&#9664;</button>
+        <button id="forward" title="Go Forward" disabled="true">&#9654;</button>
+        <button id="home" title="Go Home">&#8962;</button>
+        <button id="reload" title="Reload">&#10227;</button>
 
-    <div id="find-box">
-      <form id="find-form">
-        <input id="find-text" type="text">
-        <div id="find-results"></div>
-        <input type="submit" style="position:absolute; visibility:hidden">
-        <button id="match-case">aA</button>
-        <button id="find-backward">&#60;</button>
-        <button id="find-forward">&#62;</button>
-      </form>
-    </div>
+        <form id="location-form">
+          <div id="center-column">
+            <input id="location" type="text" value="https://www.js01.de/">
+          </div>
+          <input type="submit" value="Go">
+        </form>
 
-    <webview src="https://www.js01.de/" style="width:640px; height:480px"></webview>
+        <button id="zoom" title="Change Zoom">&#128270;</button>
+        <button id="find" title="Find in Page">&#128294;</button>
 
-    <div id="sad-webview">
-      <div id="sad-webview-icon">&#9762;</div>
-      <h2 id="crashed-label">Aw, Snap!</h2>
-      <h2 id="killed-label">He's Dead, Jim!</h2>
+      </div>
 
-      <p>Something went wrong while displaying this webpage.
-      To continue, reload or go to another page.</p>
+      <div id="zoom-box">
+        <form id="zoom-form">
+          <input id="zoom-text" type="text">
+          <input type="submit" value="&#128270;">
+          <button id="zoom-in">&#10133;</button>
+          <button id="zoom-out">&#10134;</button>
+        </form>
+      </div>
+
+      <div id="find-box">
+        <form id="find-form">
+          <input id="find-text" type="text">
+          <div id="find-results"></div>
+          <input type="submit" style="position:absolute; visibility:hidden">
+          <button id="match-case">aA</button>
+          <button id="find-backward">&#60;</button>
+          <button id="find-forward">&#62;</button>
+        </form>
+      </div>
+
+      <webview id="wv2" src="https://www.js01.de/" style="width:640px; height:240px"></webview>
+      
+      <div id="sad-webview">
+        <div id="sad-webview-icon">&#9762;</div>
+        <h2 id="crashed-label">Aw, Snap!</h2>
+        <h2 id="killed-label">He's Dead, Jim!</h2>
+
+        <p>Something went wrong while displaying this webpage.
+        To continue, reload or go to another page.</p>
+      </div>
     </div>
   </body>
 </html>
