@@ -1,3 +1,5 @@
+process.env.WP_ENV = process.env.WP_ENV || 'noWP';
+
 const electron = require('electron')
 // Module to control application life.
 const app = electron.app
@@ -23,11 +25,17 @@ function createWindow () {
   mainWindow = new BrowserWindow({width: 1024, height: 768})
 
   // and load the index.html of the app.
-  mainWindow.loadURL(url.format({
-    pathname: path.join(__dirname, 'browser.html'),
-    protocol: 'file:',
-    slashes: true
-  }))
+  if (process.env.WP_ENV === 'noWP') {
+    mainWindow.loadURL(url.format({
+      pathname: path.join(__dirname, 'index.html'),
+      protocol: 'file:',
+      slashes: true
+    }))
+  }
+  else {
+    mainWindow.loadURL('http://localhost:4000')
+  }
+
 
   // Open the DevTools.
   // mainWindow.webContents.openDevTools()

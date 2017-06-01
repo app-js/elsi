@@ -42,7 +42,7 @@
             "internalConsoleOptions": "openOnSessionStart"
         },
         {
-            "name": "Debug Main Process",
+            "name": "Main webpack",
             "type": "node",
             "request": "launch",
             "cwd": "${workspaceRoot}",
@@ -51,10 +51,11 @@
                 "runtimeExecutable": "${workspaceRoot}/node_modules/.bin/electron.cmd"
             },
             "program": "${workspaceRoot}/main.js",
-            "protocol": "legacy"
+            "protocol": "legacy",
+            "env": { "WP_ENV": "doWP" }
         },
         {
-            "name": "Debug Renderer Process",
+            "name": "Renderer webpack",
             "type": "chrome",
             "request": "launch",
             "runtimeExecutable": "${workspaceRoot}/node_modules/.bin/electron",
@@ -68,6 +69,5 @@
             "sourceMaps": true,
             "webRoot": "${workspaceRoot}"
         }
-
     ]
 }
