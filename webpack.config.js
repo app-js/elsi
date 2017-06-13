@@ -4,8 +4,8 @@ module.exports = {
   entry: './browser.js',
   output: {
     path: __dirname + '/dist',
-    publicPath: '/dev-dist',
-    filename: 'browser.js'
+    publicPath: '/dist',
+    filename: 'bundle.js'
   },
   module: {
     rules: [
