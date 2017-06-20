@@ -1,3 +1,10 @@
+import styles1 from './css/browser0.css';
+import styles2 from './css/common.css';
+import styles3 from './css/font-awesome.css';
+import styles4 from './css/browser-tabs.css';
+import styles5 from './css/browser-navbar.css';
+import styles6 from './css/browser-page.css';
+
 window.onresize = doLayout;
 var isLoading = false;
 

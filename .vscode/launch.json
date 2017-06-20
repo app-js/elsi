@@ -52,7 +52,7 @@
             },
             "program": "${workspaceRoot}/main.js",
             "protocol": "legacy",
-            "env": { "WP_ENV": "doWP" }
+            "env": { "WP_ENV": "noWP" }
         },
         {
             "name": "Renderer webpack",
