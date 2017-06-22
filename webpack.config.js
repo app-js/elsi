@@ -9,49 +9,41 @@ module.exports = {
   },
   module: {
     rules: [
-      {
-        test: /\.css$/,
-        use: [
-          { loader: 'style-loader' },
-          { loader: 'css-loader' }
-        ]
-      },
-      {
-        test: /\.(png|jpe?g|gif|ico)$/,
-        loader: 'file-loader?name=assets/[name].[hash].[ext]'
-      },
-      {
-        test: /\.woff(\?v=\d+\.\d+\.\d+)?$/,
-        loader: 'file-loader?limit=10000&mimetype=application/font-woff'
-      },
-      {
-        test: /\.woff2(\?v=\d+\.\d+\.\d+)?$/,
-        loader: 'file-loader?limit=10000&mimetype=application/font-woff'
-      },
-      {
-        test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/,
-        loader: 'file-loader?limit=10000&mimetype=application/octet-stream'
-      },
-      {
-        test: /\.eot(\?v=\d+\.\d+\.\d+)?$/,
-        loader: 'file-loader'
-      },
-      {
-        test: /\.svg(\?v=\d+\.\d+\.\d+)?$/,
-        loader: 'url-loader?limit=10000&mimetype=image/svg+xml'
-      },      
-      {
-        test: /\.js$/,
-        use: [
-          {
-            loader: 'babel-loader',
+        {
+          test: /\.css$/,
+          use: [
+            { loader: 'style-loader' },
+            { loader: 'css-loader' }
+          ]
+        },
+        {
+          test: /\.scss$/,
+          loaders: ["style-loader", "css-loader", "sass-loader"],
+          // exclude: path.resolve(__dirname, 'src/app')
+        },
+        {
+          test: /.(ttf|otf|eot|svg|woff(2)?)(\?[a-z0-9]+)?$/,
+          use: [{
+            loader: 'file-loader',
             options: {
-                presets: ['es2015']
+              name: '[name].[ext]',
+              outputPath: 'fonts/',    // where the fonts will go
+              // publicPath: '../'       // override the default path
             }
-          }
-        ],
-        exclude: /node_modules/
-      }
+          }]
+        },
+        {
+          test: /\.js$/,
+          use: [
+            {
+              loader: 'babel-loader',
+              options: {
+                  presets: ['es2015']
+              }
+            }
+          ],
+          exclude: /node_modules/
+        }
     ]
   },
   devtool: 'eval-source-map'
