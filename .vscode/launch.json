@@ -14,7 +14,7 @@
             "windows": {
                 "runtimeExecutable": "${workspaceRoot}/node_modules/.bin/electron.cmd"
             },
-            "program": "${workspaceRoot}/main.js"
+            "program": "${workspaceRoot}/electron/main.js"
         },
         {
             "type": "node",
@@ -34,7 +34,7 @@
                 "runtimeExecutable": "${workspaceRoot}/node_modules/.bin/electron.cmd"
             },
             "runtimeArgs": [
-                "${workspaceRoot}/main.js",
+                "${workspaceRoot}/electron/main.js",
                 "--enable-logging",
                 "--remote-debugging-port=9222"
             ],
@@ -50,7 +50,7 @@
             "windows": {
                 "runtimeExecutable": "${workspaceRoot}/node_modules/.bin/electron.cmd"
             },
-            "program": "${workspaceRoot}/main.js",
+            "program": "${workspaceRoot}/electron/main.js",
             "protocol": "legacy",
             "env": { "WP_ENV": "noWP" }
         },

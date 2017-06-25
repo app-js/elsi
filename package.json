@@ -2,7 +2,7 @@
   "name": "elsi",
   "version": "1.0.0",
   "description": "electron simple",
-  "main": "main.js",
+  "main": "src/main.js",
   "scripts": {
     "test": "error: no tests",
     "start": "electron .",

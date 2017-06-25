@@ -1,10 +1,10 @@
 const webpack = require('webpack')
 
 module.exports = {
-  entry: './browser.js',
+  entry: './src/browser.js',
   output: {
     path: __dirname + '/dist',
-    publicPath: 'dist/',
+    // publicPath: 'dist/',
     filename: 'bundle.js'
   },
   module: {
