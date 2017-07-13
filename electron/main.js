@@ -23,18 +23,19 @@ let mainWindow
 function createWindow () {
   // Create the browser window.
   mainWindow = new BrowserWindow({width: 1024, height: 768})
+  mainWindow.loadURL('file://' + __dirname + '/index.html');
 
   // and load the index.html of the app.
-  if (process.env.WP_ENV === 'noWP') {
-    mainWindow.loadURL(url.format({
-      pathname: path.join(__dirname, '../dist/index.html'),
-      protocol: 'file:',
-      slashes: true
-    }))
-  }
-  else {
-    mainWindow.loadURL('http://localhost:4000')
-  }
+  // if (process.env.WP_ENV === 'noWP') {
+  //   mainWindow.loadURL(url.format({
+  //     pathname: path.join(__dirname, '../dist/index.html'),
+  //     protocol: 'file:',
+  //     slashes: true
+  //   }))
+  // }
+  // else {
+  //   mainWindow.loadURL('http://localhost:4000')
+  // }
 
 
   // Open the DevTools.

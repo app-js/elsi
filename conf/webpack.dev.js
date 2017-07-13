@@ -1,7 +1,8 @@
 console.log("wp ---> ./conf/webpack.dev.js");
 
 const utils = require('./utils');
-const webpack = require('webpack')
+const webpack = require('webpack');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 var CopyWebpackPlugin = (CopyWebpackPlugin = require('copy-webpack-plugin'), CopyWebpackPlugin.default || CopyWebpackPlugin);
 
 module.exports = function (options) {
@@ -57,10 +58,16 @@ module.exports = function (options) {
 
     plugins: [
 
-      new CopyWebpackPlugin([
-        {from: 'electron/package.json', to: 'package.json'},
-        {from: 'src/index.html'}
-      ])
+                new HtmlWebpackPlugin({
+                    template: './src/index.html',
+                    inject: 'body',
+                }),
+
+                new CopyWebpackPlugin([
+                    {from: 'electron/package.json', to: 'package.json'}
+                    //{from: 'src/index.html'}
+                ])
+
 
     ],
 

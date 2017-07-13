@@ -6,10 +6,12 @@
   "scripts": {
     "test": "error: no tests",
     "start": "electron .",
-    "dev": "webpack-dev-server --no-info --quiet --port 4000 --config webpack.config.js",
-    "build": "webpack",
+    "dev": "webpack-dev-server --no-info --quiet --port 4000 --config ./conf/webpack.dev.js",
+    "build:prod": "npm run clean && webpack --config ./conf/webpack.prod.js",
+    "build:dev": "npm run clean && webpack --config ./conf/webpack.dev.js",
     "rimraf": "rimraf",
-    "clean": "npm run rimraf -- dist desktop dll"
+    "clean": "npm run rimraf -- dist desktop dll",
+    "build:desktop": "build --win --x64"
   },
   "author": "js",
   "license": "MIT",
@@ -24,16 +26,45 @@
     "copy-webpack-plugin": "^4.0.1",
     "css-loader": "^0.28.4",
     "electron": "~1.6.1",
+    "electron-builder": "^19.16.0",
     "file-loader": "^0.11.2",
+    "html-webpack-plugin": "^2.29.0",
     "node-sass": "^4.5.3",
     "rimraf": "^2.6.1",
     "sass-loader": "^6.0.6",
     "style-loader": "^0.18.2",
     "url-loader": "^0.5.9",
     "webpack": "^2.6.1",
-    "webpack-dev-server": "^2.4.5"
+    "webpack-dev-server": "^2.4.5",
+    "webpack-merge": "^4.1.0"
   },
   "dependencies": {
     "font-awesome": "^4.7.0"
+  },
+  "build": {
+    "appId": "de.app-js.elsi",
+    "mac": {
+      "category": "public.app-category.graphics-design",
+      "target": [
+        "dmg"
+      ]
+    },
+    "linux": {
+      "target": [
+        "AppImage",
+        "snap"
+      ]
+    },
+    "win": {
+      "target": [
+        "dir"
+      ]
+    },
+    "asar": false,
+    "directories": {
+      "buildResources": "src/assets",
+      "output": "desktop",
+      "app": "dist"
+    }
   }
 }

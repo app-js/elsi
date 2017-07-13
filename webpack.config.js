@@ -2,7 +2,6 @@
 console.log("wp ---> env: " + process.env.NODE_ENV + " (undefined = development)");
 console.log("wp ---> ./webpack.config.js");
 
-// Look in ./config folder for webpack.dev.js
 switch (process.env.NODE_ENV) {
   case 'prod':
   case 'production':
