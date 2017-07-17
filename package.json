@@ -11,7 +11,8 @@
     "build:dev": "npm run clean && webpack --config ./conf/webpack.dev.js",
     "rimraf": "rimraf",
     "clean": "npm run rimraf -- dist desktop dll",
-    "build:desktop": "build --win --x64"
+    "build:desktop:win": "build --win --x64",
+    "build:desktop:mac": "build --mac --x64"
   },
   "author": "js",
   "license": "MIT",
@@ -46,7 +47,7 @@
     "mac": {
       "category": "public.app-category.graphics-design",
       "target": [
-        "dmg"
+        "dir"
       ]
     },
     "linux": {
