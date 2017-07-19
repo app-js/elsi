@@ -2,7 +2,7 @@
   "name": "elsi",
   "version": "1.0.0",
   "description": "electron simple",
-  "main": "bundle.js",
+  "main": "main.js",
   "author": "J S",
   "license": "MIT"
 }

@@ -28,6 +28,10 @@ module.exports = function (options) {
                 new CopyWebpackPlugin([{
                     from: './electron/package.json',
                     to: 'package.json'
+                },
+                {
+                    from: './electron/main.js',
+                    to: 'main.js'
                 }])
 
             ],
