@@ -7,7 +7,7 @@
     "test": "error: no tests",
     "start": "electron .",
     "dev": "webpack-dev-server --no-info --quiet --port 4000 --config ./conf/webpack.dev.js",
-    "build:prod": "npm run clean && webpack --config ./conf/webpack.prod.js",
+    "build:prod": "npm run clean && webpack --config ./conf/webpack.prod.renderer.js",
     "build:dev": "npm run clean && webpack --config ./conf/webpack.dev.js",
     "rimraf": "rimraf",
     "clean": "npm run rimraf -- dist desktop dll",

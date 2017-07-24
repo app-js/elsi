@@ -1,4 +1,4 @@
-console.log("wp ---> ./conf/webpack.prod.js");
+console.log("wp ---> ./conf/webpack.prod.renderer.js");
 console.log("wp ---> env: " + process.env.NODE_ENV + " (undefined = development)");
 
 const utils = require('./utils');
@@ -36,7 +36,9 @@ module.exports = function (options) {
 
             ],
 
-            devtool: 'eval-source-map'
+            devtool: 'eval-source-map',
+
+            target: 'electron-renderer'
         }
     );
 }
