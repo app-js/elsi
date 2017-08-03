@@ -2,27 +2,13 @@ console.log("wp ---> ./conf/webpack.prod.main.js");
 console.log("wp ---> env: " + process.env.NODE_ENV + " (undefined = development)");
 
 const utils = require('./utils');
-const webpackMerge = require('webpack-merge');
 
 var CopyWebpackPlugin = (CopyWebpackPlugin = require('copy-webpack-plugin'), CopyWebpackPlugin.default || CopyWebpackPlugin);
 
-/**
- * Webpack Plugins
- */
-const DefinePlugin = require('webpack/lib/DefinePlugin');
-
-/**
- * Webpack Constants
- */
 const ENV = process.env.ENV = process.env.NODE_ENV = 'production';
 
-/**
- * Webpack configuration
- *
- * See: http://webpack.github.io/docs/configuration.html#cli
- */
 module.exports = function(options) {
-  return webpackMerge.smart({
+  return {
     entry: {
       'main.desktop': './electron/main.desktop.ts'
     },
@@ -140,5 +126,5 @@ module.exports = function(options) {
       __dirname: false,
       __filename: false,
     }
-  }, customConfig({env: ENV}));
+  };
 }
